@@ -26,10 +26,12 @@ target_include_directories(mapzk-game PUBLIC ${CMAKE_CURRENT_LIST_DIR}/src)
 find_package(vsg CONFIG REQUIRED)
 find_package(vsgXchange CONFIG REQUIRED)
 find_package(spdlog CONFIG REQUIRED)
+find_package(cppfs CONFIG REQUIRED)
 
 target_link_libraries(
   mapzk-game
   PRIVATE 
 	spdlog::spdlog
 	vsg::vsg 
-	vsgXchange::vsgXchange)
+	vsgXchange::vsgXchange
+	cppfs::cppfs)

@@ -21,7 +21,6 @@ private:
 	bool isInitialized = false;
 
 	vsg::ref_ptr<vsg::Viewer> viewer;
-	vsg::ref_ptr<vsg::Options> options;
 	vsg::ref_ptr<vsg::Node> rootNode;
 	vsg::ref_ptr<vsg::Window> window;
 };

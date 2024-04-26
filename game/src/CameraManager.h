@@ -10,6 +10,9 @@ public:
 
 	vsg::ref_ptr<vsg::Camera> GetCamera() const;
 
+	CameraManager(const CameraManager&) = delete;
+	void operator=(const CameraManager&) = delete;
+
 private:
 	void UpdateProjectionMatrix();
 

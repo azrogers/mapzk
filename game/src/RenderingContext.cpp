@@ -1,13 +1,9 @@
 #include "RenderingContext.h"
 
-#include <vsgXchange/all.h>
 #include <spdlog/spdlog.h>
 
 RenderingContext::RenderingContext()
 {
-	this->options = vsg::Options::create();
-	this->options->add(vsgXchange::all::create());
-
 	this->rootNode = vsg::Group::create();
 }
 
