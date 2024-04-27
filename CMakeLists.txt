@@ -45,6 +45,7 @@ function(configure_mzk_component targetName)
                CXX_EXTENSIONS NO)
 endfunction()
 
+add_subdirectory(lib)
 add_subdirectory(game)
 
 # clang-format target

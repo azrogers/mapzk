@@ -18,6 +18,7 @@ public:
 	void operator=(const ContentLoader&) = delete;
 
 	template <typename T> vsg::ref_ptr<T> Read(const std::string& filename) const;
+	std::optional<std::string> ReadString(const std::string& filename) const;
 
 private:
 	std::optional<std::string> FindFilePath(const std::string& filename) const;

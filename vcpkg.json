@@ -8,6 +8,9 @@
       "features": [ "assimp", "freetype" ]
     },
     "spdlog",
-    "cppfs"
+    "cppfs",
+    "refl-cpp",
+    "fmt",
+    "xxhash"
   ]
 }
