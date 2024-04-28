@@ -17,10 +17,7 @@ bool MapDefinition::Create(const std::string& mapFileText, MapDefinition& outMap
 	ClParseState state(mapFileText);
 	ClReader reader(state);
 
-	ClParseStatus status;
-
 	ClClassMapping mapping(state);
-	ClValueMapping<std::string> pMapping(&definition.provincesFile);
 	mapping.AddMapping("provinces", &definition.provincesFile);
 	mapping.AddMapping("topology", &definition.topologyFile);
 	mapping.AddMapping("rivers", &definition.riversFile);
@@ -29,6 +26,7 @@ bool MapDefinition::Create(const std::string& mapFileText, MapDefinition& outMap
 	mapping.AddMapping("sea_starts", &definition.seaStarts);
 	mapping.AddMapping("lakes", &definition.lakes);
 
+	ClParseStatus status;
 	if (!mapping.ReadObject(reader, state, status)) {
 		status.GetError().Log();
 		return false;
