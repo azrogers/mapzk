@@ -8,19 +8,19 @@
 
 class RenderingContext {
 public:
-	RenderingContext();
-	bool Initialize(int width, int height, const std::string& title);
+    RenderingContext();
+    bool Initialize(int width, int height, const std::string& title);
 
-	void RunLoop();
+    void RunLoop();
 
-	RenderingContext(const RenderingContext&) = delete;
-	void operator=(const RenderingContext&) = delete;
+    RenderingContext(const RenderingContext&) = delete;
+    void operator=(const RenderingContext&) = delete;
 
 private:
-	std::unique_ptr<CameraManager> cameraManager;
-	bool isInitialized = false;
+    std::unique_ptr<CameraManager> cameraManager;
+    bool isInitialized = false;
 
-	vsg::ref_ptr<vsg::Viewer> viewer;
-	vsg::ref_ptr<vsg::Node> rootNode;
-	vsg::ref_ptr<vsg::Window> window;
+    vsg::ref_ptr<vsg::Viewer> viewer;
+    vsg::ref_ptr<vsg::Node> rootNode;
+    vsg::ref_ptr<vsg::Window> window;
 };

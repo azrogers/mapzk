@@ -12,28 +12,28 @@
  */
 class ContentLoader {
 public:
-	ContentLoader(const std::vector<std::string>& paths);
+    ContentLoader(const std::vector<std::string>& paths);
 
-	ContentLoader(const ContentLoader&) = delete;
-	void operator=(const ContentLoader&) = delete;
+    ContentLoader(const ContentLoader&) = delete;
+    void operator=(const ContentLoader&) = delete;
 
-	template <typename T> vsg::ref_ptr<T> Read(const std::string& filename) const;
-	std::optional<std::string> ReadString(const std::string& filename) const;
+    template <typename T> vsg::ref_ptr<T> Read(const std::string& filename) const;
+    std::optional<std::string> ReadString(const std::string& filename) const;
 
 private:
-	std::optional<std::string> FindFilePath(const std::string& filename) const;
+    std::optional<std::string> FindFilePath(const std::string& filename) const;
 
-	std::vector<std::string> searchPaths;
-	vsg::ref_ptr<vsg::Options> options;
+    std::vector<std::string> searchPaths;
+    vsg::ref_ptr<vsg::Options> options;
 };
 
 template <typename T> inline vsg::ref_ptr<T> ContentLoader::Read(const std::string& filename) const
 {
-	const std::optional<std::string> path = this->FindFilePath(filename);
-	if (!path.has_value()) {
-		spdlog::error("failed to find {} at any search path", filename);
-		return T::create();
-	}
+    const std::optional<std::string> path = this->FindFilePath(filename);
+    if (!path.has_value()) {
+        spdlog::error("failed to find {} at any search path", filename);
+        return T::create();
+    }
 
-	return vsg::read_cast<T>(path.value(), this->options);
+    return vsg::read_cast<T>(path.value(), this->options);
 }

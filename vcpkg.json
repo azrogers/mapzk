@@ -11,6 +11,7 @@
     "cppfs",
     "refl-cpp",
     "fmt",
-    "xxhash"
+    "xxhash",
+    "pngpp"
   ]
 }

@@ -21,7 +21,9 @@ target_sources(
   PRIVATE ${MAPZK_GAME_SOURCES}
   PUBLIC ${MAPZK_GAME_HEADERS})
 
-target_include_directories(mapzk-game PUBLIC ${CMAKE_CURRENT_LIST_DIR}/src)
+find_path(PNGPP_INCLUDE_DIRS "png++/color.hpp")
+
+target_include_directories(mapzk-game PRIVATE ${PNGPP_INCLUDE_DIRS} PUBLIC ${CMAKE_CURRENT_LIST_DIR}/src)
 
 find_package(vsg CONFIG REQUIRED)
 find_package(vsgXchange CONFIG REQUIRED)
