@@ -1,0 +1,107 @@
+{
+	// Use IntelliSense to learn about possible attributes.
+	// Hover to view descriptions of existing attributes.
+	// For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"type": "lldb",
+			"request": "launch",
+			"name": "Debug unit tests in library 'clauser'",
+			"cargo": {
+				"args": [
+					"test",
+					"--target=x86_64-pc-windows-gnu",
+					"--no-run",
+					"--lib",
+					"--package=clauser"
+				],
+				"filter": {
+					"name": "clauser",
+					"kind": "lib"
+				}
+			},
+			"args": [],
+			"cwd": "${workspaceFolder}"
+		},
+		{
+			"type": "lldb",
+			"request": "launch",
+			"name": "Debug integration test 'deserializer'",
+			"cargo": {
+				"args": [
+					"test",
+					"--target=x86_64-pc-windows-gnu",
+					"--no-run",
+					"--test=deserializer",
+					"--package=clauser"
+				],
+				"filter": {
+					"name": "deserializer",
+					"kind": "test"
+				}
+			},
+			"args": [],
+			"cwd": "${workspaceFolder}"
+		},
+		{
+			"type": "lldb",
+			"request": "launch",
+			"name": "Debug integration test 'tokenizer'",
+			"cargo": {
+				"args": [
+					"test",
+					"--target=x86_64-pc-windows-gnu",
+					"--no-run",
+					"--test=tokenizer",
+					"--package=clauser"
+				],
+				"filter": {
+					"name": "tokenizer",
+					"kind": "test"
+				}
+			},
+			"args": [],
+			"cwd": "${workspaceFolder}"
+		},
+		{
+			"type": "lldb",
+			"request": "launch",
+			"name": "Debug executable 'mapzk'",
+			"cargo": {
+				"args": [
+					"build",
+					"--target=x86_64-pc-windows-gnu",
+					"--bin=mapzk",
+					"--package=mapzk"
+				],
+				"filter": {
+					"name": "mapzk",
+					"kind": "bin"
+				}
+			},
+			"args": [],
+			"cwd": "${workspaceFolder}"
+		},
+		{
+			"type": "lldb",
+			"request": "launch",
+			"name": "Debug unit tests in executable 'mapzk'",
+			"cargo": {
+				"args": [
+					"test",
+					"--target=x86_64-pc-windows-gnu",
+					"--no-run",
+					"--bin=mapzk",
+					"--package=mapzk"
+				],
+				"filter": {
+					"name": "mapzk",
+					"kind": "bin"
+				}
+			},
+			"args": [],
+			"cwd": "${workspaceFolder}"
+		}
+	]
+}

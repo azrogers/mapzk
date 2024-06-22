@@ -1,0 +1,18 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"rust-analyzer.testExplorer": true,
+		"rust-analyzer.cargo.target": 
+			"x86_64-pc-windows-gnu",
+		"rust-analyzer.runnables.extraArgs": [
+			"--target=x86_64-pc-windows-gnu"
+		],
+		"rust-analyzer.server.extraEnv": {
+			"RUSTFLAGS": "-Z macro-backtrace"
+		}
+	}
+}
