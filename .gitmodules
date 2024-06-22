@@ -1,0 +1,3 @@
+[submodule "lib/clauser"]
+	path = lib/clauser
+	url = git@github.com:azrogers/clauser.git
